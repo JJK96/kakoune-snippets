@@ -16,8 +16,6 @@ Make kakoune source `rc/snippets.kak` by symlinking it to your autoload director
 
 Symlink `bin/snippet` to `%val{config}/bin`
 
-Note: `rc/snippets.kak` adds mappings that call emmet-cli if the filetype is html, you might want to adapt that behaviour to your likings.
-
 ### Optional: Emmet support
 
 Install [my fork of emmet-cli](https://github.com/JJK96/emmet-cli).
