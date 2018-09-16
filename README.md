@@ -6,9 +6,9 @@ This works with any text that contains snippet holes, so in the future it can be
 
 [asciicast](https://asciinema.org/a/BFUqP7Ho1c0Ts6oManSIUMwqG)
 
-`\$\d+|\$\{\d+(:\w+)?\}` is used as the regex for the holes, but this can be adapted in the `rc/snippets.kak` file
+`\$\d+|\$\{\d+(:\w+)?\}` is used as the regex for the holes so it fits holes like `$0`, `${1}` or `${1:test}`. This can be adapted in the `rc/snippets.kak` file
 
-So it fits holes like `$0`, `${1}` or `${1:test}`
+
 
 ## Setup
 
