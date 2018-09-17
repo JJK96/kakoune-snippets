@@ -26,6 +26,8 @@ Make kakoune source `rc/emmet.kak` by symlinking it to your autoload directory
 
 Symlink `bin/emmet-call` to `%val{config}/bin`
 
+Make sure that the emmet variable in `bin/emmet-call` points to the correct location of emmet, if necessary adapt it.
+
 ## Usage
 
 Add mappings to your kakrc like the following
