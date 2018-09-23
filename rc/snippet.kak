@@ -11,8 +11,8 @@ declare-option -docstring %{
     * Return 1 when run with an invalid snippet name.} \
   str snippet_program
 
-declare-option -docstring 'path to snippet file' \
-  str snippet_file
+declare-option -docstring 'path to snippet files' \
+  str-list snippet_files
 
 declare-option -docstring 'search pattern for snippet holes' \
   str snippet_hole_pattern '\$\d+'
@@ -46,7 +46,7 @@ def snippet-word \
       exec '"aZ'
       select-word
       exec '_"by' # trim and copy word
-      exec "$%opt{snippet_program} '%opt{snippet_file}' '%reg{b}'<ret>" # abort if not valid snippet
+      exec "$%opt{snippet_program} %opt{snippet_files} -- '%reg{b}'<ret>" # abort if not valid snippet
       exec '<a-d>' # delete snippet name
       snippet "%reg{b}" # If there are multiple cursors, we assume they're all on the same snippet.
     } catch %{
@@ -59,10 +59,10 @@ def snippet-word \
 
 def snippet \
   -docstring %{Insert snippet at cursor and start typing at first hole.} -params 1 \
-  -shell-candidates %{ "$kak_opt_snippet_program" "$kak_opt_snippet_file" } %{
+  -shell-candidates %{ "$kak_opt_snippet_program" $(echo $kak_opt_snippet_files | tr -d \')} %{
   eval -save-regs '|abc' %{
     try %{
-      exec "!%opt{snippet_program} '%opt{snippet_file}' '%arg{1}'<ret>" 'uU' # insert and select snippet
+      exec "!%opt{snippet_program} %opt{snippet_files} -- '%arg{1}'<ret>" 'uU' # insert and select snippet
       exec '<a-;><a-s>)"aZ "bZgi"b<a-z>u<a-;>"a<a-z>a&' # fix indentation
       exec 'h'
       replace-next-hole
@@ -71,16 +71,5 @@ def snippet \
 }
 
 set global snippet_program "%val{config}/bin/snippet"
-set global snippet_file "%val{config}/snippets.yaml"
-set global snippet_hole_pattern %{\$\d+|\$\{\d+(:\w+)?\}|[⁰¹²³⁴⁵⁶⁷💙💚💛💜💝💟🧡]}
-hook global WinCreate .* %{
-addhl window/SnippetHole \
-  regex (¹)|(²)|(³)|(⁴)|(⁵)|(⁶)|(⁷) \
-  1:default,red \
-  2:default,rgb:FF8000 \
-  3:default,yellow \
-  4:default,green \
-  5:default,blue \
-  6:default,rgb:6F00FF \
-  7:default,rgb:9F00FF
-}
+set global snippet_files "%val{config}/snippets.yaml"
+set global snippet_hole_pattern %{\$\d+|\$\{\d+(:\w+)?\}}
