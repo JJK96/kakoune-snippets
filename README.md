@@ -8,7 +8,10 @@ This works with any text that contains snippet holes, so in the future it can be
 
 `\$\d+|\$\{\d+(:\w+)?\}` is used as the regex for the holes so it fits holes like `$0`, `${1}` or `${1:test}`. This can be adapted in the `rc/snippets.kak` file
 
+## Dependencies
 
+Python 3
+Python3 yaml bindings
 
 ## Setup
 
