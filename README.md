@@ -10,7 +10,7 @@ This works with any text that contains snippet holes, so in the future it can be
 
 ## Dependencies
 
-- Python 3
+- Python3
 - Python3 yaml bindings
 
 ## Setup
