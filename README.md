@@ -18,7 +18,7 @@ Symlink `bin/snippet` to `%val{config}/bin`
 
 ### Optional: Emmet support
 
-Install [my fork of emmet-cli](https://github.com/JJK96/emmet-cli).
+Install [emmet-cli](https://github.com/Delapouite/emmet-cli).
 
 Make kakoune source `rc/emmet.kak` by symlinking it to your autoload directory
 

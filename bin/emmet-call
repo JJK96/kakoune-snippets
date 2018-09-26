@@ -3,7 +3,7 @@
 # Depends on https://github.com/JJK96/emmet-cli
 
 # Make sure that this points to the correct location
-emmet="node $HOME/git/emmet-cli/index.js -p"
+emmet="/usr/bin/emmet -p"
 input="$(cat)"
 indent="$(echo "$input" | sed -e "s/\(^[[:blank:]]*\).*/\1/")"
 IFS='' #preserve whitespace
