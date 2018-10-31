@@ -59,7 +59,7 @@ def snippet-word \
 
 def snippet \
   -docstring %{Insert snippet at cursor and start typing at first hole.} -params 1 \
-  -shell-candidates %{ eval "$kak_opt_snippet_program" "$kak_opt_snippet_files"} %{
+  -shell-script-candidates %{ eval "$kak_opt_snippet_program" "$kak_opt_snippet_files"} %{
   eval -save-regs '|abc' %{
     try %{
       exec "!%opt{snippet_program} %opt{snippet_files} -- '%arg{1}'<ret>" 'uU' # insert and select snippet
