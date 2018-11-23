@@ -72,4 +72,4 @@ def snippet \
 
 set global snippet_program "%val{config}/bin/snippet"
 set global snippet_files "%val{config}/snippets.yaml"
-set global snippet_hole_pattern %{\$\d+|\$\{\d+(:\w+)?\}}
+set global snippet_hole_pattern %<\$\d+|\$\{\d+(:[^\}]+)?\}>
