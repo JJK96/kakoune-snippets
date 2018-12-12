@@ -1,4 +1,4 @@
-hook global WinSetOption filetype=(html|xml) %[
+hook global WinSetOption filetype=(html|xml|vue) %[
     # calls to emmet-cli
     # Depends on ../bin/emmet-call
     define-command emmet %{
