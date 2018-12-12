@@ -49,6 +49,8 @@ These snippets follow the following pattern, one snippet per line
 
 `{word}: {snippet}`
 
+The files in which to look for snippets can be adapted by overwriting `%opt{snippet_files}`
+
 ### Optional: Emmet
 
 For emmet support you can add a mapping to overwrite the default mapping for relevant filetypes like html or xml
