@@ -3,7 +3,7 @@
 ***
 
 I'm abandoning this project in favour of https://github.com/occivink/kakoune-snippets. It has all the features that this plugin has and in my opinion handles things in a more kakounesque and clean way. 
-For the updated emmet support for the new plugin see [my config files](https://github.com/JJK96/kakoune-config/blob/master/autoload/emmet.md)
+For the updated emmet support for the new plugin see [kakoune-emmet](https://github.com/JJK96/kakoune-emmet)
 
 ***
 
